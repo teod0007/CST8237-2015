@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(BOX2D);..\Engine\src;$(SDL)/include;$(SDL_image)/include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\External\Box2D_v2.3.0\Box2D\Build\vs2012\bin\$(Configuration);$(BOX2D)\Build\vs2012\bin\$(Configuration);..\$(Configuration);$(SDL)/lib/x86;$(SDL_image)/lib/x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(BOX2D);..\Engine\src;$(SDL)/include;$(SDL_image)/include;$(SDL_mixer)/include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\External\Box2D_v2.3.0\Box2D\Build\vs2012\bin\$(Configuration);$(BOX2D)\Build\vs2012\bin\$(Configuration);..\$(Configuration);$(SDL)/lib/x86;$(SDL_image)/lib/x86;$(SDL_mixer)/lib/x86;$(LibraryPath)</LibraryPath>
     <SourcePath>$(BOX2D);$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,11 +81,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="src\Cube.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="src\Cube.h" />
     <ClInclude Include="src\Game.h" />
   </ItemGroup>

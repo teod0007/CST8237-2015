@@ -28,17 +28,17 @@ Cube::Cube(Vector3 position)
 void Cube::Initialize(Graphics *graphics)
 {
   size = 0;
-
+  isColored = false;
   //vertices = new Vertex[8]();
   vertices = new Vector3[8]();
   colours = new Vector4[8]();
 
   SetVertex(0, /*pos*/-0.5f, 0.5f, 0.5f,  /*color*/ 1.0f, 0.0f, 0.0f, 1.0f);
-  SetVertex(1, /*pos*/0.5f, 0.5f, 0.5f,   /*color*/ 1.0f, 1.0f, 0.0f, 1.0f);
-  SetVertex(2, /*pos*/-0.5f, -0.5f, 0.5f, /*color*/ 1.0f, 0.0f, 1.0f, 1.0f);
-  SetVertex(3, /*pos*/0.5f, -0.5f, 0.5f,  /*color*/ 0.0f, 1.0f, 0.0f, 1.0f);
-  SetVertex(4, /*pos*/-0.5f, 0.5f, -0.5f, /*color*/ 0.0f, 0.0f, 1.0f, 1.0f);
-  SetVertex(5, /*pos*/0.5f, 0.5f, -0.5f,  /*color*/ 0.0f, 0.0f, 1.0f, 1.0f);
+  SetVertex(1, /*pos*/0.5f, 0.5f, 0.5f,   /*color*/ 1.0f, 0.0f, 0.0f, 1.0f);
+  SetVertex(2, /*pos*/-0.5f, -0.5f, 0.5f, /*color*/ 0.0f, 0.0f, 1.0f, 1.0f);
+  SetVertex(3, /*pos*/0.5f, -0.5f, 0.5f,  /*color*/ 0.0f, 0.0f, 1.0f, 1.0f);
+  SetVertex(4, /*pos*/-0.5f, 0.5f, -0.5f, /*color*/ 1.0f, 0.0f, 0.0f, 1.0f);
+  SetVertex(5, /*pos*/0.5f, 0.5f, -0.5f,  /*color*/ 1.0f, 0.0f, 0.0f, 1.0f);
   SetVertex(6, /*pos*/-0.5f, -0.5f, -0.5f,/*color*/ 0.0f, 0.0f, 1.0f, 1.0f);
   SetVertex(7, /*pos*/0.5f, -0.5f, -0.5f, /*color*/ 0.0f, 0.0f, 1.0f, 1.0f);
 
@@ -155,4 +155,30 @@ void Cube::SetVertex(int index, float x, float y, float z, float r, float g, flo
   colours[index].y = g;
   colours[index].z = b;
   colours[index].w = a;
+}
+
+void Cube::SetColor(float r, float g, float b, float a)
+{
+	colours[0].x = r;
+	colours[0].y = g;
+	colours[0].z = b;
+	colours[0].w = a;
+	colours[1].x = r;
+	colours[1].y = g;
+	colours[1].z = b;
+	colours[1].w = a;
+	colours[4].x = r;
+	colours[4].y = g;
+	colours[4].z = b;
+	colours[4].w = a;
+	colours[5].x = r;
+	colours[5].y = g;
+	colours[5].z = b;
+	colours[5].w = a;
+
+}
+
+bool& Cube::IsColored()
+{
+	return isColored;
 }

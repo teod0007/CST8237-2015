@@ -72,6 +72,10 @@ struct Matrix4x4
   static Matrix4x4 Identity();
 };
 
+enum Direction{UP,DOWN,LEFT,RIGHT};
+
+enum EntityState{IDLE,MOVING,FALLING,DEAD};
+
 class MathUtils
 {
 public:
